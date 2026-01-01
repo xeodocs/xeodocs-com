@@ -1,6 +1,18 @@
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
+@plugin "@tailwindcss/typography";
+
+/* Custom Syntax Highlighting Overrides */
+pre code.hljs {
+  padding: 0;
+  background-color: transparent;
+}
+
+.prose pre {
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
 
 @custom-variant dark (&:where(.dark, .dark *));
 

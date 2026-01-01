@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import "highlight.js/styles/atom-one-dark.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 
@@ -25,6 +26,13 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
 };
 
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+
+// ... (imports)
+
+// ... (metadata)
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -39,7 +47,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <SiteHeader />
           {children}
+          <SiteFooter />
         </ThemeProvider>
       </body>
     </html>
