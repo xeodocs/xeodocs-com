@@ -11,8 +11,26 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "XeoDocs",
-  description: "XeoDocs - The Future of Documentation",
+  metadataBase: new URL("https://xeodocs.com"),
+  title: {
+    default: "XeoDocs",
+    template: "%s | XeoDocs",
+  },
+  description: "An Open Source Documentation translation project using Artificial Intelligence to keep translations always up-to-date and available in multiple languages.",
+  openGraph: {
+    title: "XeoDocs",
+    description: "An Open Source Documentation translation project using Artificial Intelligence to keep translations always up-to-date and available in multiple languages.",
+    url: "https://xeodocs.com",
+    siteName: "XeoDocs",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "XeoDocs",
+    description: "An Open Source Documentation translation project using Artificial Intelligence to keep translations always up-to-date and available in multiple languages.",
+    creator: "@xeodocs",
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },

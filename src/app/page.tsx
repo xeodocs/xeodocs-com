@@ -1,7 +1,13 @@
+import type { Metadata } from "next"
 import { ProjectList } from "@/components/project-list"
 import { LatestArticles } from "@/components/latest-articles"
 import { getAllPosts } from "@/lib/blog"
 import { Hero } from "@/components/hero"
+
+export const metadata: Metadata = {
+  title: "XeoDocs - AI-Powered Translations for Open Source",
+  description: "An Open Source Documentation translation project using Artificial Intelligence to keep translations always up-to-date and available in multiple languages.",
+}
 
 export default function Home() {
   const latestPosts = getAllPosts().slice(0, 3)

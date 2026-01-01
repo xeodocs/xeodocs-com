@@ -22,13 +22,15 @@ export function Hero() {
                     href="#active-projects"
                     className="rounded-full bg-primary px-8 py-3 font-medium text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/25 cursor-pointer"
                 >
-                    Explore Translations
+                    <span className="hidden min-[420px]:inline">Explore Translations</span>
+                    <span className="inline min-[420px]:hidden">Translations</span>
                 </Link>
                 <Link
                     href="/blog"
                     className="rounded-full border border-black/5 bg-black/5 px-8 py-3 font-medium hover:bg-black/10 transition-all hover:scale-105 backdrop-blur-sm dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10 cursor-pointer"
                 >
-                    Read Blog
+                    <span className="hidden min-[420px]:inline">Read Blog</span>
+                    <span className="inline min-[420px]:hidden">Blog</span>
                 </Link>
             </div>
         </section>

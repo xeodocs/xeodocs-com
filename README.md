@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![XeoDocs](xeodocs.webp)
 
-## Getting Started
+# XeoDocs - AI-Powered Translations for Open Source
 
-First, run the development server:
+**XeoDocs** is a revolutionary open source initiative designed to solve one of the biggest challenges in the software ecosystem: **Language Barriers**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Our mission is simple yet ambitious: to provide high-quality, up-to-date documentation in multiple languages for the world's most popular open source technologies.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 About the Project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Language should not be an obstacle to learning a new framework or technology. However, maintaining up-to-date translations for rapidly evolving open source projects has historically been a monumental task. **XeoDocs changes that.**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+We leverage advanced Artificial Intelligence to keep pace with the rapid release cycles of modern software, ensuring that non-English speaking developers have access to the same quality of information as their peers.
 
-## Learn More
+### How it Works
 
-To learn more about Next.js, take a look at the following resources:
+Our system operates in a continuous, autonomous loop:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  **Continuous Synchronization**: Background workers constantly monitor the upstream repositories of supported projects.
+2.  **Smart Detection**: When changes are detected (features, fixes, typos), our system identifies the exact files that need attention.
+3.  **AI Translation**: Intelligent agents process the content, translating it while preserving technical context, code blocks, and terminology.
+4.  **Validation & Publishing**: The translated content is validated and automatically published to our platform.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Tech Stack
 
-## Deploy on Vercel
+This website (`xeodocs.com`) is built with modern web technologies:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-   **Framework**: [Next.js 16](https://nextjs.org/) (App Directory)
+-   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+-   **Language**: TypeScript
+-   **Content**: MDX / Markdown
+-   **Performance**: Turbopack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🏁 Getting Started
+
+To run the project locally:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/xeodocs/xeodocs-com.git
+    cd xeodocs-com
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    pnpm install
+    ```
+
+3.  **Run the development server:**
+    ```bash
+    pnpm dev
+    ```
+
+4.  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).

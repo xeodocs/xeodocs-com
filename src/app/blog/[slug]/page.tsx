@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getPostBySlug } from "@/lib/blog"
@@ -5,6 +6,41 @@ import { format } from "date-fns"
 import { ArrowLeft, Calendar, User, Tag } from "lucide-react"
 import ReactMarkdown from "react-markdown"
 import rehypeHighlight from "rehype-highlight"
+
+export async function generateMetadata(props: {
+    params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+    const params = await props.params;
+    const post = getPostBySlug(params.slug)
+
+    if (!post) {
+        return {
+            title: "Post Not Found",
+        }
+    }
+
+    const { title, date, author, featuredImage } = post
+    const description = post.content.slice(0, 160).replace(/[#*`]/g, "") + "..."
+
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            type: "article",
+            publishedTime: date,
+            authors: [author],
+            images: featuredImage ? [{ url: featuredImage }] : [],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: featuredImage ? [featuredImage] : [],
+        },
+    }
+}
 
 export default async function BlogPostPage(props: {
     params: Promise<{ slug: string }>
@@ -34,7 +70,7 @@ export default async function BlogPostPage(props: {
 
                 <header className="mb-12">
                     {post.featuredImage && (
-                        <div className="relative w-full h-[400px] mb-8 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                        <div className="relative w-full h-[400px] max-[825px]:h-[250px] mb-8 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                             <img
                                 src={post.featuredImage}
                                 alt={post.title}
@@ -56,7 +92,7 @@ export default async function BlogPostPage(props: {
                         {post.title}
                     </h1>
 
-                    <div className="flex items-center gap-6 text-muted-foreground border-b border-white/5 dark:border-white/5 border-black/5 pb-8">
+                    <div className="flex items-center gap-6 text-muted-foreground border-b border-black/5 dark:border-white/5 pb-8">
                         <time dateTime={post.date} className="flex items-center gap-2">
                             <Calendar className="h-4 w-4" />
                             {format(new Date(post.date), "MMMM d, yyyy")}

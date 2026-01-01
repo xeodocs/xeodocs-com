@@ -1,8 +1,14 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { getPaginatedPosts } from "@/lib/blog"
 import { BlogCard } from "@/components/blog-card"
 import { Pagination } from "@/components/pagination"
 import { ArrowLeft } from "lucide-react"
+
+export const metadata: Metadata = {
+    title: "Blog",
+    description: "Insights and updates from XeoDocs, an Open Source project using AI to keep documentation translations always up-to-date.",
+}
 
 export default async function BlogPage(props: {
     searchParams: Promise<{ page?: string }>
@@ -34,7 +40,7 @@ export default async function BlogPage(props: {
                         Blog & Insights
                     </h1>
                     <p className="text-xl text-muted-foreground max-w-2xl">
-                        Latest thoughts on system design, documentation, and web development.
+                        Insights and updates from XeoDocs, an Open Source project using AI to keep documentation translations always up-to-date.
                     </p>
                 </div>
 
