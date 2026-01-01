@@ -59,6 +59,21 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(outfit.variable, "antialiased min-h-screen bg-background font-sans")}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined' && typeof window.ethereum === 'undefined') {
+                window.ethereum = {
+                  isShimmed: true,
+                  selectedAddress: undefined,
+                  request: () => Promise.resolve(),
+                  on: () => {},
+                  removeListener: () => {}
+                };
+              }
+            `,
+          }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

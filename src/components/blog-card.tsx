@@ -30,7 +30,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
 
             <div className="relative z-10 flex flex-col grow">
                 <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
-                    <time dateTime={post.date} className="flex items-center gap-1">
+                    <time dateTime={post.date} className="flex items-center gap-1" suppressHydrationWarning>
                         <Calendar className="h-3 w-3" />
                         {format(new Date(post.date), "MMM d, yyyy")}
                     </time>
